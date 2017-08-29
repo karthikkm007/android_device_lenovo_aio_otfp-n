@@ -2,12 +2,14 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="external/wpa_supplicant_8 bionic frameworks/av frameworks/native system/core system/netd packages/apps/Settings"
+dirs="frameworks/av system/core system/sepolicy"
 
 for dir in $dirs ; do
 	cd $rootdirectory
+	cd $dir
 	echo "Reverting $dir patches..."
-	repo sync $dir
+	git checkout -- .
+	git clean -fd
 	echo " "
 done
 

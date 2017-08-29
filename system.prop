@@ -1,22 +1,34 @@
-# system.prop for aio_otfp
-ro.hardware=mt6752
-ro.zygote.preload.enable=0
-service.adb.root=1
+#
+#
+# system.prop
+#
 
-persist.md.perm.checked=to_upgrade
+# Telephony
+rild.libpath=mtk-ril.so
+rild.libargs=-d /dev/ttyC0
+ro.telephony.sim.count=2
+ro.telephony.ril_class=MediaTekRIL
+ro.telephony.ril.config=fakeiccid
+#ro.telephony.default_network=0,1
 
-# Mediatek Chip
-persist.mtk.wcn.combo.chipid=-1
-service.wcn.driver.ready=no
-service.wcn.coredump.mode=2
-ro.mediatek.chip_ver=S01
-ro.mediatek.platform=MT6752
-ro.mediatek.version.sdk=4
-ro.mediatek.version.release=
+persist.gemini.sim_num=2
+persist.radio.default.sim=0
+persist.radio.fd.counter=15
+persist.radio.fd.off.counter=5
+persist.radio.fd.r8.counter=15
+persist.radio.fd.off.r8.counter=5
+persist.radio.multisim.config=dsds
 
-# performance
-ro.mtk_perf_simple_start_win=1
-ro.mtk_perf_response_time=1
+bgw.current3gband=0
+#mux.debuglog.enable=0
+ril.external.md=0
+ril.current.share_modem=2
+ril.first.md=1
+ril.flightmode.poweroffMD=1
+ril.radiooff.poweroffMD=0
+ril.read.imsi=1
+ril.specific.sm_cause=0
+ril.telephony.mode=0
 
 # WiFi
 mediatek.wlan.chip=CONSYS_MT6752
@@ -64,54 +76,18 @@ ro.mtk_agps_app=1
 ro.mtk_gps_support=1
 ro.mtk_omacp_support=1
 
-# Telephony
-rild.libpath=mtk-ril.so
-rild.libargs=-d /dev/ttyC0
-ro.telephony.sim.count=2
-ro.telephony.ril_class=MediaTekRIL
-ro.telephony.ril.config=fakeiccid
-#ro.telephony.default_network=0,1
+# Memory trim
+ro.sys.fw.use_trim_settings=true
+ro.sys.fw.empty_app_percent=50
+ro.sys.fw.trim_empty_percent=100
+ro.sys.fw.trim_cache_percent=100
+ro.sys.fw.trim_enable_memory=1073741824
 
-persist.gemini.sim_num=2
-persist.radio.default.sim=0
-persist.radio.fd.counter=15
-persist.radio.fd.off.counter=5
-persist.radio.fd.r8.counter=15
-persist.radio.fd.off.r8.counter=5
-persist.radio.multisim.config=dsds
+ro.config.max_starting_bg=3
 
-bgw.current3gband=0
-#mux.debuglog.enable=0
-ril.external.md=0
-ril.current.share_modem=2
-ril.first.md=1
-ril.flightmode.poweroffMD=1
-ril.radiooff.poweroffMD=0
-ril.read.imsi=1
-ril.specific.sm_cause=0
-ril.telephony.mode=0
+# Use 3 threads max for dex2oat
+ro.sys.fw.dex2oat_thread_count=3
 
-keyguard.no_require_sim=true
-ro.com.android.dataroaming=true
-ro.gemini.smart_sim_switch=false
-ro.mediatek.gemini_support=true
-ro.mtk_eap_sim_aka=1
-ro.mtk_enable_md1=1
-ro.mtk_fd_support=1
-ro.mtk_pq_support=2
-ro.mtk_sim_hot_swap=1
-ro.mtk_world_phone=1
-ro.mtk_world_phone_policy=0
-ro.mtk_lte_support=1
-ro.sim_me_lock_mode=0
-ro.sim_refresh_reset_by_modem=1
-
-ro.mtk_bt_support=1
-ro.mtk_cam_lomo_support=1
-ro.mtk_cam_mfb_support=1
-ro.mtk_cam_vfb=1
-ro.mtk_matv_analog_support=1
-ro.mtk_wapi_support=1
-ro.mtk_wappush_support=1
-
-sys.display-size=3840x2160  //Allows 4K Video Youtube Playback
+# Camera HAL
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true

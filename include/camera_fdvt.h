@@ -5,7 +5,7 @@
 #define FDVT_IOC_MAGIC    'N'
 
 
-typedef struct 
+typedef struct
 {
     unsigned int  *pAddr;
     unsigned int  *pData;
@@ -31,29 +31,3 @@ typedef struct
 
 
 #endif //__CAMERA_FDVT_H__
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
